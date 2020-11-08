@@ -139,8 +139,5 @@ More information in amqp-lib [api reference](http://squaremo.github.com/amqp.nod
 [npm-image]: https://img.shields.io/npm/v/@runnerty/executor-amqp.svg
 [david-badge]: https://david-dm.org/runnerty/executor-amqp.svg
 [david-badge-url]: https://david-dm.org/runnerty/executor-amqp
-[sharp]: https://sharp.pixelplumbing.com
-[imagemin]: https://github.com/imagemin/imagemin
-[toFormat]: https://sharp.pixelplumbing.com/api-output#toformat
 [config.json]: http://docs.runnerty.io/config/
 [plan.json]: http://docs.runnerty.io/plan/
