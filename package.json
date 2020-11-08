@@ -1,0 +1,35 @@
+{
+  "name": "@runnerty/executor-amqp",
+  "version": "2.0.0",
+  "description": "Runnerty module: AMQP Publisher",
+  "author": "Runnerty Tech",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint '**/*.js' && prettier --check '**'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runnerty/executor-amqp.git"
+  },
+  "keywords": [
+    "runnerty",
+    "executor",
+    "amqp",
+    "queue",
+    "rabbitmq"
+  ],
+  "bugs": {
+    "url": "https://github.com/runnerty/executor-amqp/issues"
+  },
+  "homepage": "https://github.com/runnerty/executor-amqp#readme",
+  "dependencies": {
+    "amqplib": "0.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "prettier": "^2.1.2"
+  }
+}

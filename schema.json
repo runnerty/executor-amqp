@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "@runnerty-executor-image",
+  "definitions": {
+    "config": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "@runnerty-executor-amqp"
+        },
+        "protocol": {
+          "type": "string",
+          "enum": ["amqp", "amqps"]
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "port": {
+          "type": "number"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "frameMax": {
+          "type": "number"
+        },
+        "heartbeat": {
+          "type": "number"
+        },
+        "vhost": {
+          "type": "string"
+        }
+      }
+    },
+    "params": {
+      "type": "object",
+      "required": ["id", "message"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "exange": {
+          "type": "string"
+        },
+        "exangeType": {
+          "type": "string"
+        },
+        "routingKey": {
+          "type": "string"
+        },
+        "queue": {
+          "type": "string"
+        },
+        "options": {
+          "type": "object",
+          "properties": {
+            "expiration": { "anyOf": [{ "type": "string" }, { "type": "number" }] },
+            "userId": { "type": "string" },
+            "CC": {
+              "anyOf": [
+                { "type": "string" },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "mandatory": {
+              "type": "boolean"
+            },
+            "persistent": {
+              "type": "boolean"
+            },
+            "deliveryMode": {
+              "anyOf": [{ "type": "boolean" }, { "type": "number" }]
+            },
+            "BCC": {
+              "anyOf": [
+                { "type": "string" },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "contentType": {
+              "type": "string"
+            },
+            "contentEncoding": {
+              "type": "string"
+            },
+            "headers": {
+              "type": "object"
+            },
+            "priority": {
+              "type": "number"
+            },
+            "correlationId": {
+              "type": "string"
+            },
+            "replyTo": {
+              "type": "string"
+            },
+            "messageId": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "number"
+            },
+            "type": {
+              "type": "string"
+            },
+            "appId": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
