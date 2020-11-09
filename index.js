@@ -45,14 +45,14 @@ class amqpExecutor extends Execution {
     try {
       const connection = await amqp.connect(connectOptions);
       const channel = await connection.createChannel();
-      return channel;
+      return [connection, channel];
     } catch (err) {
       throw new Error(err.message);
     }
   }
 
   async sendMessageToQueue() {
-    const channel = await this.connect();
+    const [connection, channel] = await this.connect();
     await channel.assertQueue(this.options.queue);
 
     const sendResponse = channel.sendToQueue(
@@ -64,12 +64,14 @@ class amqpExecutor extends Execution {
     if (!sendResponse) {
       throw new Error(`Message not sended: ${this.options.message} to ${this.options.queue} queue.`);
     }
+    await channel.close();
+    connection.close();
   }
 
   async sendMessageToExange() {
     if (!this.options.exangeType) throw new Error(`For publish in exange you must set the exangeType.`);
 
-    const channel = await this.connect();
+    const [connection, channel] = await this.connect();
     if (this.options.queue) {
       await channel.assertQueue(this.options.queue);
     }
@@ -85,6 +87,8 @@ class amqpExecutor extends Execution {
     if (!sendResponse) {
       throw new Error(`Message not sended: ${this.options.message} to ${this.options.exange} exange.`);
     }
+    await channel.close();
+    connection.close();
   }
 }
 
