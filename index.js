@@ -1,7 +1,7 @@
 'use strict';
 const amqp = require('amqplib');
 
-const Execution = global.ExecutionClass;
+const Executor = require('@runnerty/module-core').Executor;
 
 class amqpExecutor extends Execution {
   constructor(process) {
