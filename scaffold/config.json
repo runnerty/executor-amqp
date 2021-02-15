@@ -1,0 +1,12 @@
+{
+  "executors": [
+    {
+      "id": "amqp_default",
+      "type": "@runnerty-executor-amqp",
+      "hostname": "localhost",
+      "port": 5672,
+      "username": "guest",
+      "password": "guest"
+    }
+  ]
+}
