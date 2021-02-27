@@ -3,7 +3,7 @@ const amqp = require('amqplib');
 
 const Executor = require('@runnerty/module-core').Executor;
 
-class amqpExecutor extends Execution {
+class amqpExecutor extends Executor {
   constructor(process) {
     super(process);
     this.options = {};
